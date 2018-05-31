@@ -10,6 +10,16 @@
 #include <linux/fs.h>
 #include <linux/msdos_fs.h>
 
+// this lines provides centos7 compatibility
+// when FALLOC_FL_KEEP_SIZE and FALLOC_FL_PUNCH_HOLE
+// are not defined
+#ifndef FALLOC_FL_KEEP_SIZE
+#define FALLOC_FL_KEEP_SIZE 0x01
+#endif
+#ifndef FALLOC_FL_PUNCH_HOLE
+#define FALLOC_FL_PUNCH_HOLE 0x02
+#endif
+
 #if USE_SYS_RANDOM_H
 #  include <sys/random.h>
 #endif
